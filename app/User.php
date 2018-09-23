@@ -45,6 +45,14 @@ class User extends Authenticatable
        }
        return false;
     }
+    public function isSub()
+    {
+       if ($this->role->name == 'subscriber'){
+
+           return true;
+       }
+       return false;
+    }
 
 
 

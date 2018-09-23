@@ -6,6 +6,17 @@
 
 
     <h1>create user</h1>
+   
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 
     {!! Form::open(['method' =>'Post', 'action' => 'AdminUsersController@store'])  !!}
 
@@ -16,7 +27,7 @@
 
     <div class="form-group">
         {!! Form::label('email','Email:') !!}
-        {!! Form::text('email',null,['class'=>'form-control', 'required']) !!}
+        {!! Form::text('email',null,['class'=>'form-control', ]) !!}
     </div>
 
     <div class="form-group">

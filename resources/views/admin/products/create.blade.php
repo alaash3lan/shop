@@ -7,6 +7,16 @@
 
     <h1>create product</h1>
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
     {!! Form::open(['method' =>'Post', 'action' => 'AdminProductsController@store' , 'files'=>'true'])  !!}
 
     <div class="form-group">

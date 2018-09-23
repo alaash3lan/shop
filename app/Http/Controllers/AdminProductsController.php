@@ -8,6 +8,7 @@ use App\Subcategory;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProductStoreRequest;
 
 class AdminProductsController extends Controller
 {
@@ -42,9 +43,9 @@ class AdminProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        return $request;
+       
         $input = $request->all();
         $user = Auth::user();
 
