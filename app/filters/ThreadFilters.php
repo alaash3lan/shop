@@ -11,29 +11,26 @@ use App\User;
  */
 class ThreadFilters extends Filters
 {
-protected  $filters = ['popular','price'];
+    protected  $filters = ['popular','price'];
 
-
-
-    /**
+     /** filter by popularity
      * @param $builder
      * @param $username
      * @return mixed
      */
-
-
     protected function popular()
     {
-
     	$this->builder->getQuery()->orders = [];
        return $this->builder->orderBy('views', 'desc');
     }
 
-protected function price()
+    /**
+     * filter by price
+     */
+    protected function price()
     {
-
     	$this->builder->getQuery()->orders = [];
-       return $this->builder->orderBy('price', 'desc');
+        return $this->builder->orderBy('price', 'desc');
     }
 
 
@@ -41,15 +38,3 @@ protected function price()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-?>

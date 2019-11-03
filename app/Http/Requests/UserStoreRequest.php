@@ -14,8 +14,6 @@ class UserStoreRequest extends FormRequest
      */
     public function authorize()
     {
-
-
          return Auth::user()->isAdmin();
     }
 
@@ -36,10 +34,14 @@ class UserStoreRequest extends FormRequest
     }
 
 
+    /**
+     * messsages if request not passed the rules
+     *
+     * @return void
+     */
     public function messages()
     {
         return [
-
             'email.required' => 'Email is required!',
             'name.required' => 'Name is required!',
             'password.required' => 'Password is required!',

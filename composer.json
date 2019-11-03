@@ -9,7 +9,7 @@
         "algolia/algoliasearch-client-php": "^1.27",
         "fideloper/proxy": "^4.0",
         "gloudemans/shoppingcart": "^2.5",
-        "laravel/framework": "5.6.*",
+        "laravel/framework": "6.0.*",
         "laravel/scout": "^5.0",
         "laravel/socialite": "^3.1",
         "laravel/tinker": "^1.0",

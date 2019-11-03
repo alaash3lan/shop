@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Mail\SendMailable;
 
 //use Cart;
 /*
@@ -14,13 +15,6 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::get('/', function () {
-//
-//
-//
-//    return view('layouts.store');
-//});
-
 Route::get('/cart', 'CartController@index')->name('cart');
 
 Route::resource('/', 'StoreController');
@@ -29,7 +23,15 @@ Route::resource('/subcategory/product', 'Product');
 
 Auth::routes();
 
+
+
+Route::get('/email', function(){
+    $user = Auth::user();
+  return  \Mail::to($user)->send(new SendMailable);
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/search', function (Request $request) {
     $result = App\Product::search($request->search)->get();

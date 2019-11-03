@@ -64,16 +64,6 @@ class AdminProductsController extends Controller
         return redirect('admin/products');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id $cat =Categories::pluck('name', 'id');
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-    }
 
     /**
      * Show the form for editing the specified resource.

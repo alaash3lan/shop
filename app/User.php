@@ -26,32 +26,47 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Undocumented function
+     *
+     * @return mixed
+     */
     public function products()
     {
         return $this->belongsToMany('App\Product');
     }
 
+    /**
+     * role belong to user relation
+     *
+     * @return mixed
+     */
     public function role()
     {
         return $this->belongsTo('App\Role');
     }
 
 
-    public function isAdmin()
+    /**
+     * check if user is subscriber
+     *
+     * @return boolean
+     */
+    public function isAdmin() :bool
     {
-       if ($this->role->name == 'admin'){
-
-           return true;
-       }
-       return false;
+        return $this->role->name == 'admin' ? true : false;
     }
-    public function isSub()
-    {
-       if ($this->role->name == 'subscriber'){
 
-           return true;
-       }
-       return false;
+
+    /**
+     * check if user is subscriber
+     *
+     * @return boolean
+     */
+    public function isSub() :bool
+    {
+        return $this->role->name == 'subscriber' ? true : false;
     }
 
 

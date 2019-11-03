@@ -20,32 +20,32 @@ class ProductStoreRequest extends FormRequest
      * Get the validation rules that apply to the request.
      *
      * @return array
-     */
+    */
     public function rules()
     {
         return [
             'photo_id' =>'required',
-
             '_token'=>'required',
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'subcategory_id' => 'required'
-          
+            'subcategory_id' => 'required'     
         ];
     }
 
 
-
+    /**
+     * messsages if request not passed the rules
+     *
+     * @return array
+     */
     public function messages()
     {
         return [
             'photo_id.required' => 'photo is required!',
-
             'name.required' => 'name is required!',
             'description.required' => 'description is required!',
             'price.required' => 'price is required!',
-
         ];
     }
 }
